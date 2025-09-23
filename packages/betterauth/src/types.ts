@@ -2,6 +2,7 @@ import type { DodoPayments } from "dodopayments";
 
 import type { UnionToIntersection } from "better-auth";
 import type { checkout } from "./plugins/checkout";
+import type { checkoutSession } from "./plugins/checkoutSession";
 import type { portal } from "./plugins/portal";
 import type { webhooks } from "./plugins/webhooks";
 
@@ -18,6 +19,7 @@ export type Product = {
 
 export type DodoPaymentsPlugin =
   | ReturnType<typeof checkout>
+  | ReturnType<typeof checkoutSession>
   | ReturnType<typeof portal>
   | ReturnType<typeof webhooks>;
 
